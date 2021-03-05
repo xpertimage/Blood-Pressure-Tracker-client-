@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Blood Pressure Tracker</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,38 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Blood Pressure Tracker</h1>
+      <h3 id="error-message">This is my message area</h3>
+      <!-- Bootstrap sample -->
+      <form class="signUpForm">
+        <div class="col-sm">
+          <label for="exampleInputEmail1" class="form-label" >Sign up Email address</label>
+          <input type="email" class="form-control"  aria-describedby="emailHelp" name="credentials[email]">
+        </div>
+        <div class="col-sm">
+          <label for="exampleInputPassword1" class="form-label" >Password</label>
+          <input type="password" class="form-control" name="credentials[password]">
+        </div>
+        <div class="col-sm">
+          <label for="exampleInputPassword_Confirmation" class="form-label" >Password</label>
+          <input type="password" class="form-control" name="credentials[password_confirmation]">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <div>  </div>
+      <div>  </div>
+      <form class="signInForm">
+        <div class="col-sm">
+          <label for="exampleInputEmail1" class="form-label" >Sign In Email address</label>
+          <input type="email" class="form-control"  aria-describedby="emailHelp" name="credentials[email]">
+        </div>
+        <div class="col-sm">
+          <label for="exampleInputPassword1" class="form-label" >Password</label>
+          <input type="password" class="form-control" name="credentials[password]">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+  <!-- Bootstrap sample end -->
     </body>
 </html>
