@@ -37,7 +37,7 @@ const changePasswordFailure = function (response) {
 }
 
 const signOutSuccess = function (response) {
-  display.form1()
+  // display.form1()
   $('#error-message').text('Thanks for playing. You are now signed out')
 }
 

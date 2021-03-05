@@ -40,12 +40,12 @@ const onSignInForm = function (event) {
 //     .catch(ui.changePasswordFailure)
 // }
 //
-// const onSignOut = function (event) {
-//   event.preventDefault()
-//   api.signOut(store.user)
-//     .then(ui.signOutSuccess)
-//     .catch(ui.signOutFailure)
-// }
+const onSignOut = function (event) {
+  event.preventDefault()
+  api.signOut(store.user)
+    .then(ui.signOutSuccess)
+    .catch(ui.signOutFailure)
+}
 //
 // const onSettings = function (event) {
 //   event.preventDefault()
@@ -59,8 +59,8 @@ const onSignInForm = function (event) {
 // }
 module.exports = {
   onSignUpForm,
-  onSignInForm
-  // onSignOut,
+  onSignInForm,
+  onSignOut
   // onSettings,
   // onBack,
   // onChangePassword
