@@ -5,7 +5,7 @@ const signUpForm = function (data) {
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/sign-up',
-    headers: {  'Access-Control-Allow-Origin': 'https://xpertimage.github.io' },
+    // headers: {  'Access-Control-Allow-Origin': 'https://xpertimage.github.io' },
     data: data
   })
 }

@@ -15,14 +15,12 @@
       <h1>Blood Pressure Tracker</h1>
       <h3 id="error-message"> </h3>
       <!-- Bootstrap sample -->
-
-      <form id="startForm">
+      <form class="startForm">
         <div class="col-sm">
           <button type="button" class="btn btn-success btn-SignUp">Sign Up</button>
           <button type="button" class="btn btn-success btn-SignIn">Sign In</button>
       </form>
-
-      <form id="signUpForm">
+      <form class="signUpForm">
         <div class="col-sm">
           <label for="exampleInputEmail1" class="form-label" >Sign up Email address</label>
           <input type="email" class="form-control"  aria-describedby="emailHelp" name="credentials[email]">
@@ -35,13 +33,11 @@
           <label for="exampleInputPassword_Confirmation" class="form-label" >Password</label>
           <input type="password" class="form-control" name="credentials[password_confirmation]">
         </div>
-        <button type="submit" class="btn btn-primary">Sign Up</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
       </form>
-
       <div>  </div>
       <div>  </div>
-
-      <form id="signInForm">
+      <form class="signInForm">
         <div class="col-sm">
           <label for="exampleInputEmail1" class="form-label" >Sign In Email address</label>
           <input type="email" class="form-control"  aria-describedby="emailHelp" name="credentials[email]">
@@ -50,32 +46,7 @@
           <label for="exampleInputPassword1" class="form-label" >Password</label>
           <input type="password" class="form-control" name="credentials[password]">
         </div>
-        <button type="submit" class="btn btn-primary">Sign In</button>
-      </form>
-
-      <form id="signedInForm">
-        <label class="form-label" >Systolic</label>
-        <input type="number" class="form-control" name="systolic">
-        <label class="form-label" >Diastolic</label>
-        <input type="number" class="form-control" name="diastolic">
-        <label class="form-label" >Pulse</label>
-        <input type="number" class="form-control" name="pulse">
-        <button type="button" class="btn btn-success btn-seeAllReadings">See All Readings</button>
-        <button type="button" class="btn btn-success btn-findOneReading">Find One Reading</button>
-        <button id="btn-submitReading" type="submit" class="btn btn-success" >Submit Reading</button>
-        <button type="button" class="btn btn-success btn-removeReading">Remove Reading</button>
-        <button type="button" class="btn btn-success btn-SignOut">Sign Out</button>
-        <button type="button" class="btn btn-success btn-changePW">Change Password</button>
-      </form>
-
-      <form id="chgPassForm">
-        <div class="col-sm">
-          <label for="exampleInputPassword1" class="form-label" >Old Password</label>
-          <input type="password" class="form-control" name="passwords[old]">
-          <label for="exampleInputPassword1" class="form-label" >New Password</label>
-          <input type="password" class="form-control" name="passwords[new]">
-        </div>
-        <button type="submit" class="btn btn-primary">Change Password</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
         <button type="button" class="btn btn-success btn-SignOut">Sign Out</button>
       </form>
   <!-- Bootstrap sample end -->

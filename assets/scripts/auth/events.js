@@ -2,6 +2,7 @@ const api = require('./api')
 // require the ui file, so we can update the dom after an API request
 const ui = require('./ui')
 const store = require('../store')
+const display = require('../forms')
 // const display = require('../forms')
 // require the get form fields function
 const getFormFields = require('../../../lib/get-form-fields')
@@ -47,10 +48,10 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 //
-// const onSettings = function (event) {
-//   event.preventDefault()
-//   display.form5()
-// }
+const onSignUp = function (event) {
+  display.signUp()
+  console.log('Events.js - onSignUp ran')
+}
 //
 // const onBack = function () {
 //   $('.game-history').text('')
@@ -60,7 +61,8 @@ const onSignOut = function (event) {
 module.exports = {
   onSignUpForm,
   onSignInForm,
-  onSignOut
+  onSignOut,
+  onSignUp
   // onSettings,
   // onBack,
   // onChangePassword
