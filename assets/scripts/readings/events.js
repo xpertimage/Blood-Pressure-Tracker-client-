@@ -21,13 +21,44 @@ const rCreate = function (event) {
 
 const showAll = function (event) {
   event.preventDefault()
-  // send data to api for sign up
   api.readingIndex()
     .then(ui.indexSuccess)
     .catch(ui.indexFailure)
 }
 
+const rFind = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+  console.log('Readings Events: data=', data)
+  api.readingFind(data)
+    .then(ui.findSuccess)
+    .catch(ui.findFailure)
+}
+
+const rUpdate = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+  console.log('Readings Events: data=', data)
+  api.readingUpdate(data)
+    .then(ui.updateSuccess)
+    .catch(ui.updateFailure)
+}
+
+const rDelete = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+  api.readingDelete(data)
+    .then(ui.deleteSuccess)
+    .catch(ui.deleteFailure)
+}
+
 module.exports = {
   rCreate,
+  rFind,
+  rDelete,
+  rUpdate,
   showAll
 }

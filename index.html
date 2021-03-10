@@ -14,6 +14,7 @@
     <body>
       <h1>Blood Pressure Tracker</h1>
       <h3 id="error-message"> </h3>
+      <div id="bpLog"></div>
       <!-- Bootstrap sample -->
 
       <form id="startForm">
@@ -61,9 +62,7 @@
         <label class="form-label" >Pulse</label>
         <input type="number" class="form-control" name="pulse">
         <button type="button" class="btn btn-success btn-seeAllReadings">See All Readings</button>
-        <button type="button" class="btn btn-success btn-findOneReading">Find One Reading</button>
         <button id="btn-submitReading" type="submit" class="btn btn-success" >Submit Reading</button>
-        <button type="button" class="btn btn-success btn-removeReading">Remove Reading</button>
         <button type="button" class="btn btn-success btn-SignOut">Sign Out</button>
         <button type="button" class="btn btn-success btn-changePW">Change Password</button>
       </form>
@@ -76,8 +75,40 @@
           <input type="password" class="form-control" name="passwords[new]">
         </div>
         <button type="submit" class="btn btn-primary">Change Password</button>
-        <button type="button" class="btn btn-success btn-SignOut">Sign Out</button>
       </form>
+
+      <form id="findForm">
+        <div class="col-sm">
+          <label class="form-label" >BP Reading ID to Find</label>
+          <input type="text" class="form-control" name="ID">
+          </div>
+        <button type="submit" class="btn btn-primary">Find My Reading</button>
+      </form>
+
+      <form id="updateForm">
+        <label class="form-label" >Systolic</label>
+        <input type="number" class="form-control" name="systolic" id="systolic">
+        <label class="form-label" >Diastolic</label>
+        <input type="number" class="form-control" name="diastolic" id="diastolic">
+        <label class="form-label" >Pulse</label>
+        <input type="number" class="form-control" name="pulse" id="pulse">
+        <label class="form-label" >ID</label>
+        <input type="text" class="form-control" name="id" id="ID">
+        <!-- <label class="form-label" >Created On Date</label>
+        <input type="text" class="form-control" name="date" id="date"> -->
+        <button id="btn-updateReading" type="submit" class="btn btn-success" >Modify Reading</button>
+      </form>
+
+      <form id="deleteForm">
+        <div class="col-sm">
+          <label class="form-label" >BP Reading ID to Remove</label>
+          <input type="text" class="form-control" name="ID">
+          </div>
+        <button type="submit" class="btn btn-primary">Delete My Reading</button>
+      </form>
+
+      <button type="button" class="btn btn-success btn-SignOut">Sign Out</button>
+
   <!-- Bootstrap sample end -->
     </body>
 </html>

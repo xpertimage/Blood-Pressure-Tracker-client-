@@ -13,10 +13,10 @@ const readingIndex = function () {
 }
 
 // Get 1 reading by ID
-const readingGetOne = function (data) {
+const readingFind = function (data) {
   return $.ajax({
-    method: 'POST',
-    url: config.apiUrl + '/readings',
+    method: 'GET',
+    url: config.apiUrl + '/readings/' + data.ID,
     data: data,
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -27,8 +27,8 @@ const readingGetOne = function (data) {
 // Delete a reading by ID
 const readingDelete = function (data) {
   return $.ajax({
-    method: 'POST',
-    url: config.apiUrl + '/readings',
+    method: 'DELETE',
+    url: config.apiUrl + '/readings/' + data.ID,
     data: data,
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -37,10 +37,10 @@ const readingDelete = function (data) {
 }
 
 // Update a reading by ID
-const readingUpdateOne = function (data) {
+const readingUpdate = function (data) {
   return $.ajax({
     method: 'PATCH',
-    url: config.apiUrl + '/readings',
+    url: config.apiUrl + '/readings/' + data.id,
     data: data,
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -65,6 +65,6 @@ module.exports = {
   readingIndex,
   readingCreate,
   readingDelete,
-  readingUpdateOne,
-  readingGetOne
+  readingUpdate,
+  readingFind
 }

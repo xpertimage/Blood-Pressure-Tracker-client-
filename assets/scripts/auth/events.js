@@ -31,16 +31,16 @@ const onSignInForm = function (event) {
     .catch(ui.signInFailure)
 }
 
-// const onChangePassword = function (event) {
-//   event.preventDefault()
-//   const form = event.target
-//   const data = getFormFields(form)
-//   // console.log('Events.js - data=', data)
-//   api.changePassword(data)
-//     .then(ui.changePasswordSuccess)
-//     .catch(ui.changePasswordFailure)
-// }
-//
+const onChgPassForm = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+  // console.log('Events.js - data=', data)
+  api.changePassword(data)
+    .then(ui.changePasswordSuccess)
+    .catch(ui.changePasswordFailure)
+}
+
 const onSignOut = function (event) {
   event.preventDefault()
   api.signOut(store.user)
@@ -62,7 +62,8 @@ module.exports = {
   onSignUpForm,
   onSignInForm,
   onSignOut,
-  onSignUp
+  onSignUp,
+  onChgPassForm
   // onSettings,
   // onBack,
   // onChangePassword
