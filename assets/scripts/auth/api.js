@@ -2,10 +2,10 @@ const config = require('./../config')
 const store = require('./../store')
 
 const signUpForm = function (data) {
-  console.log('API.js apiUrl= ', config.apiUrl)
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/sign-up',
+    // headers: {  'Access-Control-Allow-Origin': 'https://xpertimage.github.io' },
     data: data
   })
 }
