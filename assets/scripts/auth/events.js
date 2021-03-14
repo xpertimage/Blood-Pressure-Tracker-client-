@@ -8,8 +8,8 @@ const display = require('../forms')
 const getFormFields = require('../../../lib/get-form-fields')
 
 const onSignUpForm = function (event) {
+  display.signUp()
   event.preventDefault()
-
   // get data from html form
   const form = event.target
   const data = getFormFields(form)
@@ -21,6 +21,7 @@ const onSignUpForm = function (event) {
 
 const onSignInForm = function (event) {
   event.preventDefault()
+
   // console.log(event)
   // get data from html form
   const form = event.target
@@ -33,6 +34,7 @@ const onSignInForm = function (event) {
 
 const onChgPassForm = function (event) {
   event.preventDefault()
+  display.chgPass()
   const form = event.target
   const data = getFormFields(form)
   // console.log('Events.js - data=', data)

@@ -1,13 +1,13 @@
 const store = require('../store')
-// const display = require('../forms')
+const display = require('../forms')
 const signUpSuccess = function (response) {
   $('#error-message').text('Thank you for signing up')
   $('#sign-up').trigger('reset')
-  // display.form3()
+  display.start()
 }
 
 const signUpFailure = function (response) {
-  $('#error-message').text('Sign up failed, try again')
+  $('#error-message').text(response.responseJSON.message)
   $('#sign-up').trigger('reset')
 }
 
@@ -22,10 +22,12 @@ const signInSuccess = function (response) {
   // Show the change-password form and the sign-out button
   $('#error-message').text('Thank you for signing in')
   $('#sign-in').trigger('reset')
+  display.signedIn()
 }
 
 const signInFailure = function (response) {
-  $('#error-message').text('Sign in failed, please try again')
+  console.log(response.responseJSON.message)
+  $('#error-message').text(response.responseJSON.message)
 }
 
 const changePasswordSuccess = function (response) {
@@ -33,16 +35,17 @@ const changePasswordSuccess = function (response) {
   $('#changePassword').trigger('reset')
 }
 const changePasswordFailure = function (response) {
-  $('#error-message').text('Password change failed. Please try again.')
+  $('#error-message').text(response.responseJSON.message)
 }
 
 const signOutSuccess = function (response) {
   // display.form1()
   $('#error-message').text('You are now signed out')
+    display.start()
 }
 
 const signOutFailure = function (response) {
-  $('#error-message').text('Sign Out failed')
+  $('#error-message').text(response.responseJSON.message)
 }
 module.exports = {
   signUpSuccess,

@@ -1,38 +1,48 @@
-const hideAll = function () {
-  // $('#signUpForm').hide()
-  // $('#signInForm').hide()
-  // $('#signedInForm').hide()
-  // $('.btn-SignOut').hide()
-  // $('#startForm').hide()
-  // $('#chgPassForm').hide()
-  // console.log('hideAll Executed!')
+
+const uiMessages = require('./readings/ui')
+const showElement = (elName) => {
+  $('.all').hide(0, () => $("#" + elName).show())
 }
-// const showAll = function () {
-//   $('#signUpForm').show()
-//   $('#signInForm').show()
-//   $('.btn-SignOut').show()
-//   $('#startForm').show()
-//   $('#chgPassForm').show()
-//   console.log('ShowAll Executed!')
-// }
 const start = function () {
-  hideAll()
-  $('#startForm').show()
-  console.log('start Executed!')
+  uiMessages.clearMessages()
+  showElement ('startForm')
 }
 const signUp = function () {
-  hideAll()
-  $('#signUpForm').show()
-  console.log('Forms.js - sign-up ran')
+  showElement ('signUpForm')
 }
 const signIn = function () {
-  hideAll()
-  $('#signInForm').show()
+  showElement('signInForm')
+}
+
+const signedIn = function () {
+  showElement('signedInForm')
+}
+
+
+const chgPass = function () {
+  showElement('chgPassForm')
+}
+
+const find = function () {
+  showElement('findForm')
+}
+
+const update = function () {
+  showElement('updateForm')
+}
+
+const deleteForm = function () {
+  showElement('deleteForm')
 }
 
 module.exports = {
-  hideAll,
   start,
   signUp,
-  signIn
+  signIn,
+  signedIn,
+  deleteForm,
+  chgPass,
+  update,
+  find,
+
 }

@@ -15,9 +15,12 @@ $(() => {
   $('.btn-SignOut').on('click', authEvents.onSignOut)
   $('.btn-SignUp').on('click', display.signUp)
   $('.btn-SignIn').on('click', display.signIn)
+  $('.back').on('click', display.start)
   $('.btn-seeAllReadings').on('click', readingEvents.showAll)
   $('#signedInForm').on('submit', readingEvents.rCreate)
   $('#findForm').on('submit', readingEvents.rFind)
   $('#deleteForm').on('submit', readingEvents.rDelete)
   $('#updateForm').on('submit', readingEvents.rUpdate)
 })
+
+display.start()
