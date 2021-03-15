@@ -1,7 +1,7 @@
 
 const uiMessages = require('./readings/ui')
 const showElement = (elName) => {
-  $('.all').hide(0, () => $("#" + elName).show())
+  $('.all').hide(0, () => $('#' + elName).show())
 }
 const start = function () {
   uiMessages.clearMessages()
@@ -17,7 +17,6 @@ const signIn = function () {
 const signedIn = function () {
   showElement('signedInForm')
 }
-
 
 const chgPass = function () {
   showElement('chgPassForm')

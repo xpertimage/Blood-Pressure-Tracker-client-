@@ -7,8 +7,7 @@ const clearMessages = function () {
 const createSuccess = function (response) {
   clearMessages()
   $('#error-message').text('BP Reading Created')
-  $('#sign-up').trigger('reset')
-  // display.form3()
+  $('#signedInForm').trigger('reset')
 }
 
 const createFailure = function (response) {
@@ -19,10 +18,17 @@ const createFailure = function (response) {
 
 const indexSuccess = function (response) {
   clearMessages()
-  $('#error-message').text('BP Readings Fetched' )
-  // Display the response which is an array of objects
-  // containing the Blood Pressure logs for the user.
-  $('#bpLog').text(JSON.stringify(response, null, 2))
+  $('.bp-table').show()
+  $('#error-message').text('BP Readings Fetched')
+  // store the blood pressure readings from response in store.readings
+  store.readings = response.readings
+   for(let x = 0; x < response.readings.length; x++){
+     $('.bp-table tr:last').after('<tr><td>' + response.readings[x].createdAt +
+      '</td><td>' + response.readings[x].systolic + '</td><td>' +
+      response.readings[x].diastolic + '</td><td>' +
+      response.readings[x].pulse + '</td><td>' +
+      response.readings[x]._id + '</td></tr>')
+   }
   $('#sign-up').trigger('reset')
 }
 
@@ -38,7 +44,7 @@ const findSuccess = function (response) {
   // Display the response which is an array of objects
   // containing the Blood Pressure logs for the user.
   //$('#bpLog').text(JSON.stringify(response, null, 2))
-  console.log(response)
+  // console.log(response)
   //const myDate = response.reading.createdAt + "UTC"
   $('#ID').val(response.reading._id)
   $('#systolic').val(response.reading.systolic)
@@ -68,7 +74,7 @@ const deleteFailure = function (response) {
 
 const updateSuccess = function (response) {
   clearMessages()
-  $('#error-message').text('Update succesful' )
+  $('#error-message').text('Update succesful')
   $('#sign-up').trigger('reset')
 }
 

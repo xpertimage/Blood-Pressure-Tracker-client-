@@ -14,8 +14,8 @@ const rCreate = function (event) {
   const form = event.target
   const data = getFormFields(form)
   console.log(data)
-  if (data.systolic.length == 0 || data.systolic.length == 0 || data.pulse.length == 0) {
-    ui.createFailure(" ")
+  if (data.systolic.length === 0 || data.systolic.length === 0 || data.pulse.length === 0) {
+    ui.createFailure(' ')
   }
   // send data to api for sign up
   api.readingCreate(data)
