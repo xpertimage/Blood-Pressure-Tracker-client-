@@ -14,10 +14,12 @@ const readingIndex = function () {
 
 // Get 1 reading by ID
 const readingFind = function (data) {
+  // console.log('API readingFind')
+  // console.log(data)
+  // console.log('store.user.token:', store.user.token)
   return $.ajax({
     method: 'GET',
-    url: config.apiUrl + '/readings/' + data.ID,
-    data: data,
+    url: config.apiUrl + '/readings/' + data._id,
     headers: {
       Authorization: 'Bearer ' + store.user.token
     }
@@ -57,7 +59,7 @@ const readingCreate = function (data) {
     headers: {
       ContentType: 'application/json',
       Authorization: 'Bearer ' + store.user.token
-     }
+    }
   })
 }
 

@@ -1,5 +1,5 @@
 const store = require('../store')
-// const display = require('../forms')
+const display = require('../forms')
 const clearMessages = function () {
   $('#bpLog').text('')
   $('#error-message').text('')
@@ -22,13 +22,15 @@ const indexSuccess = function (response) {
   $('#error-message').text('BP Readings Fetched')
   // store the blood pressure readings from response in store.readings
   store.readings = response.readings
-   for(let x = 0; x < response.readings.length; x++){
-     $('.bp-table tr:last').after('<tr><td>' + response.readings[x].createdAt +
+  $('.reading-row').remove()
+  // let strCheckBox =  '<div class="custom-control custom-checkbox"> <input type="checkbox" class="custom-control-input"  > <label class="custom-control-label" for="customCheck1"></label></div>'
+  for (let x = 0; x < response.readings.length; x++) {
+    $('.bp-table tr:last').after('<tr class="reading-row" data-id=' + response.readings[x]._id + '><td>' + response.readings[x].createdAt +
       '</td><td>' + response.readings[x].systolic + '</td><td>' +
       response.readings[x].diastolic + '</td><td>' +
       response.readings[x].pulse + '</td><td>' +
       response.readings[x]._id + '</td></tr>')
-   }
+  }
   $('#sign-up').trigger('reset')
 }
 
@@ -40,12 +42,8 @@ const indexFailure = function (response) {
 
 const findSuccess = function (response) {
   clearMessages()
-  $('#error-message').text('BP Reading Found' )
-  // Display the response which is an array of objects
-  // containing the Blood Pressure logs for the user.
-  //$('#bpLog').text(JSON.stringify(response, null, 2))
-  // console.log(response)
-  //const myDate = response.reading.createdAt + "UTC"
+  display.updateForm()
+  $('#error-message').text('BP Reading Found')
   $('#ID').val(response.reading._id)
   $('#systolic').val(response.reading.systolic)
   $('#diastolic').val(response.reading.diastolic)
@@ -62,7 +60,7 @@ const findFailure = function (response) {
 
 const deleteSuccess = function (response) {
   clearMessages()
-  $('#error-message').text('BP Reading Removed' )
+  $('#error-message').text('BP Reading Removed')
   $('#sign-up').trigger('reset')
 }
 

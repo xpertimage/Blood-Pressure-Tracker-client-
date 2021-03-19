@@ -5,10 +5,10 @@ const showElement = (elName) => {
 }
 const start = function () {
   uiMessages.clearMessages()
-  showElement ('startForm')
+  showElement('startForm')
 }
 const signUp = function () {
-  showElement ('signUpForm')
+  showElement('signUpForm')
 }
 const signIn = function () {
   showElement('signInForm')
@@ -26,7 +26,7 @@ const find = function () {
   showElement('findForm')
 }
 
-const update = function () {
+const updateForm = function () {
   showElement('updateForm')
 }
 
@@ -41,7 +41,6 @@ module.exports = {
   signedIn,
   deleteForm,
   chgPass,
-  update,
-  find,
-
+  updateForm,
+  find
 }

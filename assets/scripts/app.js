@@ -14,6 +14,12 @@ $(() => {
   $('#chgPassForm').on('submit', authEvents.onChgPassForm)
   $('.btn-SignOut').on('click', authEvents.onSignOut)
   $('.btn-SignUp').on('click', display.signUp)
+  $('.btn-changePW').on('click', display.chgPass)
+  $('.btn-changePW-back').on('click', display.signedIn)
+  $('.btn-findOne-back').on('click', display.signedIn)
+  $('.btn-deleteOne-back').on('click', display.signedIn)
+  $('.btn-findOne').on('click', display.find)
+  $('.btn-deleteOne').on('click', display.deleteForm)
   $('.btn-SignIn').on('click', display.signIn)
   $('.back').on('click', display.start)
   $('.btn-seeAllReadings').on('click', readingEvents.showAll)
@@ -21,6 +27,9 @@ $(() => {
   $('#findForm').on('submit', readingEvents.rFind)
   $('#deleteForm').on('submit', readingEvents.rDelete)
   $('#updateForm').on('submit', readingEvents.rUpdate)
+  // $('.reading-row').on('click', readingEvents.rowClick)
+
+  // $('.bp-table>tbody>tr').on('click', console.log(event))
 })
 
 display.start()

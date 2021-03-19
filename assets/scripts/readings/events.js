@@ -1,8 +1,8 @@
 const api = require('./api')
 // require the ui file, so we can update the dom after an API request
 const ui = require('./ui')
-const store = require('../store')
-const display = require('../forms')
+// const store = require('../store')
+// const display = require('../forms')
 const getFormFields = require('../../../lib/get-form-fields')
 
 // const display = require('../forms')
@@ -31,10 +31,10 @@ const showAll = function (event) {
 }
 
 const rFind = function (event) {
+  console.log('Events-rFind')
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
-  console.log('Readings Events: data=', data)
   api.readingFind(data)
     .then(ui.findSuccess)
     .catch(ui.findFailure)
@@ -59,10 +59,15 @@ const rDelete = function (event) {
     .catch(ui.deleteFailure)
 }
 
+const rowClick = function (event) {
+  console.log('This is the row clicked', event.target)
+}
+
 module.exports = {
   rCreate,
   rFind,
   rDelete,
   rUpdate,
+  rowClick,
   showAll
 }

@@ -19,6 +19,9 @@ const signInSuccess = function (response) {
   // display.form4()
   // console.log(response.user)
   store.user = response.user
+  console.log('signInSuccess')
+  console.log(response)
+  console.log(store)
   // Show the change-password form and the sign-out button
   $('#error-message').text('Thank you for signing in')
   $('#sign-in').trigger('reset')
@@ -41,7 +44,7 @@ const changePasswordFailure = function (response) {
 const signOutSuccess = function (response) {
   // display.form1()
   $('#error-message').text('You are now signed out')
-    display.start()
+  display.start()
 }
 
 const signOutFailure = function (response) {
