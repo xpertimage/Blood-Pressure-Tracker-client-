@@ -42,7 +42,7 @@ const indexFailure = function (response) {
 
 const findSuccess = function (response) {
   clearMessages()
-  display.updateForm()
+  $('#updateForm').show()
   $('#error-message').text('BP Reading Found')
   $('#ID').val(response.reading._id)
   $('#systolic').val(response.reading.systolic)

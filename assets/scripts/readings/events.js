@@ -51,6 +51,7 @@ const rUpdate = function (event) {
 }
 
 const rDelete = function (event) {
+  console.log('Events.js rDelete')
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
