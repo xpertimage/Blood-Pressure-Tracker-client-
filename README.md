@@ -1,4 +1,4 @@
-# Blood Pressure Tracker   [image](/public/HeartDiagram.jpg)
+# Blood Pressure Tracker   ![image](HeartDiagram.png)
 
 This application is a handy little utility for those people with high blood pressure and anyone else interested in keeping records of their blood pressure. It allows a user to enter their blood pressure readings: Systolic, Diastolic and Pulse and the system will store the information to a secure server with a timestamp to record when the reading was entered.
 
@@ -32,12 +32,12 @@ As a signed in user I should be able to update a previous reading
 
 As a signed in user I should be able to delete a reading.
 
-[Wireframes](./puplic/WireDiagram/WireDiagrams-Start.jpg)
-[Wireframes](./puplic/WireDiagram/WireDiagrams-SignUp.jpg)
-[Wireframes](./puplic/WireDiagram/WireDiagrams-SignIn.jpg)
-[Wireframes](./puplic/WireDiagram/WireDiagrams-SignedIn.jpg)
-[Wireframes](./puplic/WireDiagram/WireDiagrams-FindOne.jpg)
-[Wireframes](./puplic/WireDiagram/WireDiagrams-DeleteOne.jpg)
-[Wireframes](./puplic/WireDiagram/WireDiagrams-ChgPass.jpg)
+![Wireframes](Start.png)
+![Wireframes](SignUp.png)
+![Wireframes](SignIn.png)
+![Wireframes](SignedIn.png)
+![Wireframes](FindOne.png)
+![Wireframes](DeleteOne.png)
+![Wireframes](ChgPass.png)
 
 [Server Repo](https://github.com/xpertimage/bp_tracker)
