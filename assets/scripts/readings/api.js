@@ -28,7 +28,7 @@ const readingFind = function (data) {
 
 // Delete a reading by ID
 const readingDelete = function (data) {
-  console.log('API.js readingDelete')
+  // console.log('API.js readingDelete')
   return $.ajax({
     method: 'DELETE',
     url: config.apiUrl + '/readings/' + data.ID,

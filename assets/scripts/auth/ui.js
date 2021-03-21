@@ -19,9 +19,9 @@ const signInSuccess = function (response) {
   // display.form4()
   // console.log(response.user)
   store.user = response.user
-  console.log('signInSuccess')
-  console.log(response)
-  console.log(store)
+  // console.log('signInSuccess')
+  // console.log(response)
+  // console.log(store)
   // Show the change-password form and the sign-out button
   $('#error-message').text('Thank you for signing in')
   $('#sign-in').trigger('reset')
@@ -31,6 +31,7 @@ const signInSuccess = function (response) {
 const signInFailure = function (response) {
   console.log(response.responseJSON.message)
   $('#error-message').text(response.responseJSON.message)
+  $('#sign-in').trigger('reset')
 }
 
 const changePasswordSuccess = function (response) {
@@ -39,6 +40,7 @@ const changePasswordSuccess = function (response) {
 }
 const changePasswordFailure = function (response) {
   $('#error-message').text(response.responseJSON.message)
+  $('#changePassword').trigger('reset')
 }
 
 const signOutSuccess = function (response) {

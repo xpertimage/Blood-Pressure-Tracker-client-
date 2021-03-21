@@ -52,7 +52,7 @@ const onSignOut = function (event) {
 //
 const onSignUp = function (event) {
   display.signUp()
-  console.log('Events.js - onSignUp ran')
+  // console.log('Events.js - onSignUp ran')
 }
 //
 // const onBack = function () {

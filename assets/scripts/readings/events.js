@@ -13,7 +13,7 @@ const rCreate = function (event) {
   // get data from html form
   const form = event.target
   const data = getFormFields(form)
-  console.log(data)
+  // console.log(data)
   if (data.systolic.length === 0 || data.systolic.length === 0 || data.pulse.length === 0) {
     ui.createFailure(' ')
   }
@@ -31,7 +31,7 @@ const showAll = function (event) {
 }
 
 const rFind = function (event) {
-  console.log('Events-rFind')
+  // console.log('Events-rFind')
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
@@ -44,14 +44,14 @@ const rUpdate = function (event) {
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
-  console.log('Readings Events: data=', data)
+  // console.log('Readings Events: data=', data)
   api.readingUpdate(data)
     .then(ui.updateSuccess)
     .catch(ui.updateFailure)
 }
 
 const rDelete = function (event) {
-  console.log('Events.js rDelete')
+  // console.log('Events.js rDelete')
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
@@ -61,7 +61,7 @@ const rDelete = function (event) {
 }
 
 const rowClick = function (event) {
-  console.log('This is the row clicked', event.target)
+  // console.log('This is the row clicked', event.target)
 }
 
 module.exports = {
