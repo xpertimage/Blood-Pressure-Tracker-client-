@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Blood Pressure Tracker</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <h1>Blood Pressure Tracker</h1>
+      <h3 id="error-message" class="message"> </h3>
+      <div id="bpLog" class="message"></div>
+      <!-- Bootstrap sample -->
+
+
+
+
+      <form id="startForm" class="all">
+        <div class="col-sm">
+          <button type="button" class="btn btn-success btn-SignUp">Sign Up</button>
+          <button type="button" class="btn btn-success btn-SignIn">Sign In</button>
+        </div>
+      </form>
+
+      <form  id="signUpForm" class="all">
+        <div class="col-sm">
+          <label for="exampleInputEmail1" class="form-label" >Sign up Email address</label>
+          <input type="email" class="form-control"  aria-describedby="emailHelp" name="credentials[email]">
+        </div>
+        <div class="col-sm">
+          <label for="exampleInputPassword1" class="form-label" >Password</label>
+          <input type="password" class="form-control" name="credentials[password]">
+        </div>
+        <div class="col-sm">
+          <label for="exampleInputPassword_Confirmation" class="form-label" >Password</label>
+          <input type="password" class="form-control" name="credentials[password_confirmation]">
+        </div>
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+        <button type="button" class="back btn btn-secondary">Back</button>
+      </form>
+
+
+      <div>  </div>
+      <div>  </div>
+
+      <form id="signInForm" class="all">
+        <div class="col-sm">
+          <label for="exampleInputEmail1" class="form-label" >Sign In Email address</label>
+          <input type="email" class="form-control"  aria-describedby="emailHelp" name="credentials[email]">
+        </div>
+        <div class="col-sm">
+          <label for="exampleInputPassword1" class="form-label" >Password</label>
+          <input type="password" class="form-control" name="credentials[password]">
+        </div>
+        <button type="submit" class="btn btn-primary">Sign In</button>
+        <button type="button" class="back btn btn-secondary">Back</button>
+      </form>
+
+      <form id="signedInForm"  class="all">
+        <label class="form-label" >Systolic</label>
+        <input type="number" class="form-control" name="systolic">
+        <label class="form-label" >Diastolic</label>
+        <input type="number" class="form-control" name="diastolic">
+        <label class="form-label" >Pulse</label>
+        <input type="number" class="form-control" name="pulse">
+        <button type="button" class="btn btn-success btn-seeAllReadings">See All Readings</button>
+        <button id="btn-submitReading" type="submit" class="btn btn-success" >Submit Reading</button>
+        <button type="button" class="btn btn-success btn-SignOut">Sign Out</button>
+        <button type="button" class="btn btn-success btn-changePW">Change Password</button>
+        <button type="button" class="btn btn-success btn-findOne">Find 1 Reading</button>
+        <button type="button" class="btn btn-success btn-deleteOne">Delete 1 Reading</button>
+      </form>
+
+      <form id="chgPassForm"  class="all">
+        <div class="col-sm">
+          <label for="exampleInputPassword1" class="form-label" >Old Password</label>
+          <input type="password" class="form-control" name="passwords[old]">
+          <label for="exampleInputPassword1" class="form-label" >New Password</label>
+          <input type="password" class="form-control" name="passwords[new]">
+        </div>
+        <button type="submit" class="btn btn-primary">Change Password</button>
+        <button type="button" class="btn btn-success btn-changePW-back">Back</button>
+      </form>
+
+      <form id="findForm"  class="all">
+        <div class="col-sm">
+          <label class="form-label" >BP Reading ID to Find</label>
+          <input type="text" class="form-control" name="_id">
+          </div>
+        <button type="submit" class="btn btn-primary">Find My Reading</button>
+        <button type="button" class="btn btn-success btn-findOne-back">Back</button>
+
+      </form>
+
+      <form id="updateForm"  class="all">
+        <label class="form-label" >Systolic</label>
+        <input type="number" class="form-control" name="systolic" id="systolic">
+        <label class="form-label" >Diastolic</label>
+        <input type="number" class="form-control" name="diastolic" id="diastolic">
+        <label class="form-label" >Pulse</label>
+        <input type="number" class="form-control" name="pulse" id="pulse">
+        <label class="form-label" >ID</label>
+        <input type="text" class="form-control" name="id" id="ID">
+        <!-- <label class="form-label" >Created On Date</label>
+        <input type="text" class="form-control" name="date" id="date"> -->
+        <button id="btn-updateReading" type="submit" class="btn btn-success" >Modify Reading</button>
+      </form>
+
+      <form id="deleteForm"  class="all">
+        <div class="col-sm">
+          <label class="form-label" >BP Reading ID to Remove</label>
+          <input type="text" class="form-control" name="ID">
+          </div>
+        <button type="submit" class="btn btn-primary">Delete My Reading</button>
+        <button type="button" class="btn btn-success btn-deleteOne-back">Back</button>
+      </form>
+
+      <button type="button" class="btn btn-success btn-SignOut all">Sign Out</button>
+
+      <table class="table table-striped table-hover bp-table all data-click-to-select="true"">
+        <thead>
+          <tr>
+            <!-- <th scope="col">Check</th> -->
+            <th scope="col">Date/Time</th>
+            <th scope="col">Systolic</th>
+            <th scope="col">Diastolic</th>
+            <th scope="col">Pulse</th>
+            <th scope="col">ID</th>
+          </tr>
+        </thead>
+        <tbody>
+
+      </table>
+
+
+
+
+  <!-- Bootstrap sample end -->
+    </body>
+</html>
