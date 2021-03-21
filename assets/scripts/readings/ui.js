@@ -49,37 +49,37 @@ const findSuccess = function (response) {
   $('#diastolic').val(response.reading.diastolic)
   $('#pulse').val(response.reading.pulse)
   $('#date').val(response.reading.createdAt.toString())
-  $('#sign-up').trigger('reset')
+  $('#findForm').trigger('reset')
 }
 
 const findFailure = function (response) {
   clearMessages()
   $('#error-message').text('Find record failed, try again')
-  $('#sign-up').trigger('reset')
+  $('#findForm').trigger('reset')
 }
 
 const deleteSuccess = function (response) {
   clearMessages()
   $('#error-message').text('BP Reading Removed')
-  $('#sign-up').trigger('reset')
+  $('#deleteForm').trigger('reset')
 }
 
 const deleteFailure = function (response) {
   clearMessages()
   $('#error-message').text('Delete failed, try again')
-  $('#sign-up').trigger('reset')
+  $('#deleteForm').trigger('reset')
 }
 
 const updateSuccess = function (response) {
   clearMessages()
   $('#error-message').text('Update succesful')
-  $('#sign-up').trigger('reset')
+  $('#updateForm').trigger('reset')
 }
 
 const updateFailure = function (response) {
   clearMessages()
   $('#error-message').text('Update failed, try again')
-  $('#sign-up').trigger('reset')
+  $('#updateForm').trigger('reset')
 }
 
 module.exports = {

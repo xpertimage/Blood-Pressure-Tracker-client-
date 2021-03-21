@@ -2,13 +2,13 @@ const store = require('../store')
 const display = require('../forms')
 const signUpSuccess = function (response) {
   $('#error-message').text('Thank you for signing up')
-  $('#sign-up').trigger('reset')
+  $('#signUpForm').trigger('reset')
   display.start()
 }
 
 const signUpFailure = function (response) {
   $('#error-message').text(response.responseJSON.message)
-  $('#sign-up').trigger('reset')
+  $('#signUpForm').trigger('reset')
 }
 
 const signInSuccess = function (response) {
@@ -24,23 +24,23 @@ const signInSuccess = function (response) {
   // console.log(store)
   // Show the change-password form and the sign-out button
   $('#error-message').text('Thank you for signing in')
-  $('#sign-in').trigger('reset')
+  $('#signInForm').trigger('reset')
   display.signedIn()
 }
 
 const signInFailure = function (response) {
   console.log(response.responseJSON.message)
   $('#error-message').text(response.responseJSON.message)
-  $('#sign-in').trigger('reset')
+  $('#signInForm').trigger('reset')
 }
 
 const changePasswordSuccess = function (response) {
   $('#error-message').text('Password changed.')
-  $('#changePassword').trigger('reset')
+  $('#chgPassForm').trigger('reset')
 }
 const changePasswordFailure = function (response) {
   $('#error-message').text(response.responseJSON.message)
-  $('#changePassword').trigger('reset')
+  $('#chgPassForm').trigger('reset')
 }
 
 const signOutSuccess = function (response) {
